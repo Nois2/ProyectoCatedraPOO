@@ -1,0 +1,95 @@
+/*Aqui iran los que no tienen contenedores clase o identificadores*/
+body{
+    background-color: #3498db;
+    padding: 0;
+    margin: 0;
+}
+
+button{
+    background-color: steelblue;
+    border-radius: 4px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    padding: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s transform 0.3s;
+}
+
+label{
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+h1{
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+/*En esta parte irian las listas*/
+.menu{
+    text-align: center;
+}
+
+.menu ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    background-color: #4d4d5c;
+}
+
+.menu ul li {
+    display: inline-block;
+    padding: 10px;
+}
+
+.menu ul li a {
+    display: block;
+    padding: 10px 20px;
+    text-decoration: none;
+    color: white;
+    font-family: 'Arial Narrow Bold', sans-serif;
+}
+
+/*aqui iriran los que tienen clases o identificadores*/
+
+.contenedorPadre{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50vh;   
+}
+
+.contenedorHijo{
+    background-color: white;
+    width: 500px;
+    padding: 20px;
+    font-family: Georgia;
+    border-radius: 40px;
+    text-align: center;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 5);
+}
+
+#solicitudRequeremiento{
+    padding: 3px;
+    border: solid black 1px;
+    border-radius: 5px;
+}
+
+#archivoPDF{
+    background-color: slategray;
+    margin-left: 3px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+/*Aqui iriran los hovers*/
+
+#solicitudRequeremiento:hover{
+    border: red solid;
+}
+
+button:hover{
+    border: solid teal;
+    background-color: teal;
+    transform: scale(1.05);
+}
+
+.menu ul li:hover {
+    background-color: #ddd;
+}
