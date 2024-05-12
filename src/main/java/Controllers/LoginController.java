@@ -1,5 +1,6 @@
 package Controllers;
 
+import Models.Database.Conexion;
 import Models.Queries.ConsultasEmpleados;
 import Models.Tables.Empleados;
 import jakarta.servlet.*;
@@ -7,6 +8,7 @@ import jakarta.servlet.http.*;
 import jakarta.servlet.annotation.*;
 
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.sql.SQLException;
 
 import Models.Queries.ConsultasEmpleados.*;
@@ -22,6 +24,7 @@ public class LoginController extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        
         RequestDispatcher rd = request.getRequestDispatcher("WEB-INF/errorPage.jsp");
         rd.forward(request, response);
     }
@@ -32,7 +35,7 @@ public class LoginController extends HttpServlet {
         String password = request.getParameter("password");
 
         // Crea un objeto para Realizar las consultas.
-        ConsultasEmpleados consulta = new ConsultasEmpleados();
+        ConsultasEmpleados consulta = new ConsultasEmpleados(new Conexion());
 
         // Crear un objeto de Empleado con los datos del formulario
 
@@ -47,7 +50,7 @@ public class LoginController extends HttpServlet {
                 if (consulta.existeEmpleado(empleadoActual)) {
                     // Obtener el empleado desde la base de datos
                     empleadoActual = consulta.ObtenerEmpleadoPorCorreoYPassword(email,password);
-                    System.out.println("empleadoActual.getFK_idNivelDeAcceso() = " + empleadoActual.getFK_idNivelDeAcceso());
+                    System.out.println("empleadoActual.getFK_idNivelDeAcceso() = " + empleadoActual.getApellidos());
 
                     // Establecer la sesión con el empleado autenticado
                     HttpSession sesion = request.getSession();

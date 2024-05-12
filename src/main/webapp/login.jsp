@@ -1,3 +1,6 @@
+<%@ page import="Models.Tables.Empleados" %>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -24,8 +27,14 @@
                     <br>
                     <br>
                 <button type="submit" class="btn btn-primary btn-block">Iniciar Sesión</button>
+                <div><%=session.getAttribute("mensaje")%></div>
+                <div><%! Empleados httpSession = new Empleados();
+                        public static int sumar(int a, int b){
+                            return a + b;
+                        }%></div>
+                <div><</div>
 
-                <div class="text-danger mt-2">${mensaje}</div>
+
             </div>
         </div>
     </form>
