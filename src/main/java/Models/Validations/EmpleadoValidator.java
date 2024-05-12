@@ -23,8 +23,8 @@ public class EmpleadoValidator {
     }
 
     // Validar que la contraseña tenga al menos 8 caracteres y contenga al menos una letra y un número
-    public static boolean validarPassword(String contrasena) {
-        return contrasena != null && contrasena.length() >= 8 && contrasena.matches(".*[a-zA-Z]+.*") && contrasena.matches(".*\\d+.*");
+    public static boolean validarPassword(String passwd) {
+        return passwd != null && passwd.length() >= 8 && passwd.matches(".*[a-zA-Z]+.*") && passwd.matches(".*\\d+.*");
     }
 
     // Validar que el empleado encargado exista en la base de datos

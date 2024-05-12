@@ -32,20 +32,20 @@ validar que de veras es un programador o etc*/
 
 DELIMITER //
 
-CREATE FUNCTION sp_obtenerNivelDeAccesoDeEmpleado(IdEmpleado INT)
-RETURNS VARCHAR(50)
+CREATE FUNCTION sp_obtenerNivelDeAccesoDeEmpleado(IdEmpleado INT) RETURNS VARCHAR(50) READS SQL DATA
 BEGIN
     DECLARE nivelAcceso VARCHAR(50);
     
     SELECT n.nombreNivelDeAcceso INTO nivelAcceso
     FROM empleados AS e
     INNER JOIN niveldeacceso AS n 
-    ON n.PK_idNivelDeAcceso = e.FK_idNivelDeAcceso 
+    ON n.PK_idNivelDeAcceso = e.FK_idNivelDeAcceso
     WHERE e.PK_idEmpleado = IdEmpleado
     LIMIT 1;
 
     RETURN nivelAcceso;
 END;
+
 //
 
 DELIMITER ;
@@ -70,32 +70,32 @@ BEGIN
     DECLARE idProyectoPorSelect INT;
     DECLARE idCasoRequerimientoPorID INT;
 
-   /* -- Verificar que ningún parámetro vaya vacío*/
+    /* Verificar que ningún parámetro vaya vacío*/
     IF sp_idEmpleado IS NULL OR sp_nombreProyecto = '' OR sp_URL_requerimiento_documentoPDF = '' OR descripcionProyecto = '' THEN
         SET mensaje = 'Uno o más parámetros están vacíos.';
         SET error_occurred = TRUE;
     ELSE
-      /*  -- Obtener el nivel de acceso del empleado*/
+        /* Obtener el nivel de acceso del empleado*/
         SET nivelAcceso = sp_obtenerNivelDeAccesoDeEmpleado(sp_idEmpleado);
 
-       /* -- Verificar si el nivel de acceso permite crear casos sin adjunto */
+        /* Verificar si el nivel de acceso permite crear casos sin adjunto */
         IF nivelAcceso = 'Jefes de áreas funcionales' THEN
-         /*   -- Si no hay errores, crear proyecto, caso y bitácora */
+            /* Si no hay errores, crear proyecto, caso y bitácora */
             BEGIN
-              /*  -- Se crea el Proyecto*/
+                /* Se crea el Proyecto*/
                 INSERT INTO proyectos (nombreProyecto, URL_requerimiento_documentoPDF, FK_idEmpleado)
                 VALUES (sp_nombreProyecto, sp_URL_requerimiento_documentoPDF, sp_idEmpleado);
-              /*  -- Se obtiene el ID del proyecto recién creado */
+                /* Se obtiene el ID del proyecto recién creado */
                 SET idProyectoPorSelect = LAST_INSERT_ID();
                 -- Se inicializa el casoRequerimiento */
                 INSERT INTO casorequerimiento (TituloCasoRequerimiento, porcentajeAvance, FK_idEstadoRequerimiento, FK_idEmpleado, FK_idProyecto)
                 VALUES ('Inicialización', 0, 1, sp_idEmpleado, idProyectoPorSelect);
-               /* -- Se obtiene el ID del casoRequerimiento recién creado */
+                /* Se obtiene el ID del casoRequerimiento recién creado */
                 SET idCasoRequerimientoPorID = LAST_INSERT_ID();
-               /* -- Se inicializa su primera bitácora */
+                /* Se inicializa su primera bitácora */
                 INSERT INTO bitacorarequerimiento (DescripcionDeAvanceEnRequerimiento, PorcentajeDeAvanceRealizadoEnBitacora, fechaActualizacionRequerimiento, FK_idEstadoBitacora, FK_idCasoRequerimiento)
                 VALUES ('Inicio De Proyecto', 0, NOW(), 2, idCasoRequerimientoPorID);
-               /* -- Se asume que no hubo errores (Mensaje de Salida) */
+                /* Se asume que no hubo errores (Mensaje de Salida) */
                 SET mensaje = 'Proyecto creado correctamente.';
             END;
         ELSE
@@ -104,7 +104,7 @@ BEGIN
         END IF;
     END IF;
 
-    /*-- Si hay errores, establecer el porcentaje de avance en 0 */
+    /* Si hay errores, establecer el porcentaje de avance en 0 */
     IF error_occurred THEN
         SET mensaje = 'Error al crear el proyecto.';
     END IF;
@@ -143,7 +143,7 @@ BEGIN
         END;
     END IF;
 
-   /*  Si hay errores, establecer mensaje de error */
+    /* Si hay errores, establecer mensaje de error */
     IF error_occurred THEN
         SET mensaje = 'Error al actualizar la bitácora de requerimiento.';
     END IF;
@@ -216,8 +216,3 @@ BEGIN
 END//
 
 DELIMITER ;
-
-
-/*EJEMPLO DE EJECUCION */
-
-

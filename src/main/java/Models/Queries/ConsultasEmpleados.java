@@ -73,7 +73,9 @@ public class ConsultasEmpleados {
                 empleadoData.setMail(resultadoConsulta.getString("mail"));
                 empleadoData.setPasswd(resultadoConsulta.getString("passwd"));
                 empleadoData.setFK_empleadoEncargado(resultadoConsulta.getInt("FK_empleadoEncargado"));
+                empleadoData.setFK_idNivelDeAcceso(resultadoConsulta.getInt("FK_idNivelDeAcceso"));
             }
+
         } finally {
             if (resultadoConsulta != null) {
                 resultadoConsulta.close();

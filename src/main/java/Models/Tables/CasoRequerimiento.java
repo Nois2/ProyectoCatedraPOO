@@ -14,7 +14,7 @@ public class CasoRequerimiento {
 
     public CasoRequerimiento(int PK_idCasoRequerimiento, String tituloCasoRequerimiento, int porcentajeAvance, int FK_idEstadoRequerimiento, int FK_idEmpleado, int FK_idEmpleadoProbador, int FK_idProyecto) {
         this.PK_idCasoRequerimiento = PK_idCasoRequerimiento;
-        TituloCasoRequerimiento = tituloCasoRequerimiento;
+        this.TituloCasoRequerimiento = tituloCasoRequerimiento;
         this.porcentajeAvance = porcentajeAvance;
         this.FK_idEstadoRequerimiento = FK_idEstadoRequerimiento;
         this.FK_idEmpleado = FK_idEmpleado;
@@ -31,15 +31,15 @@ public class CasoRequerimiento {
     }
 
     public String getTituloCasoRequerimiento() {
-        return TituloCasoRequerimiento;
+        return this.TituloCasoRequerimiento;
     }
 
     public void setTituloCasoRequerimiento(String tituloCasoRequerimiento) {
-        TituloCasoRequerimiento = tituloCasoRequerimiento;
+        this.TituloCasoRequerimiento = tituloCasoRequerimiento;
     }
 
     public int getPorcentajeAvance() {
-        return porcentajeAvance;
+        return this.porcentajeAvance;
     }
 
     public void setPorcentajeAvance(int porcentajeAvance) {
@@ -55,7 +55,7 @@ public class CasoRequerimiento {
     }
 
     public int getFK_idEmpleado() {
-        return FK_idEmpleado;
+        return this.FK_idEmpleado;
     }
 
     public void setFK_idEmpleado(int FK_idEmpleado) {
@@ -63,7 +63,7 @@ public class CasoRequerimiento {
     }
 
     public int getFK_idEmpleadoProbador() {
-        return FK_idEmpleadoProbador;
+        return this.FK_idEmpleadoProbador;
     }
 
     public void setFK_idEmpleadoProbador(int FK_idEmpleadoProbador) {

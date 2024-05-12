@@ -27,13 +27,16 @@
                     <br>
                     <br>
                 <button type="submit" class="btn btn-primary btn-block">Iniciar Sesión</button>
-                <div><%=session.getAttribute("mensaje")%></div>
-                <div><%! Empleados httpSession = new Empleados();
-                        public static int sumar(int a, int b){
-                            return a + b;
-                        }%></div>
-                <div><</div>
+                <p>${mensaje}</p>
+                <%--El uso de EL siempre toma la data segun esta prioridad
+                1-pageScope
+                2-requestScope
+                3-sessionScope
+                4-applicationScope
+                --%>
 
+                <div>
+                </div>
 
             </div>
         </div>

@@ -12,10 +12,10 @@ VALUES
 /*Insercion de datos en tabla empleados*/
 INSERT INTO empleados (nombres, apellidos, mail, passwd, FK_empleadoEncargado, FK_idNivelDeAcceso)
 VALUES
-('Juan', 'Perez', 'ejemplo1@gmail.com', 'password', NULL, 1), -- Ejemplo de un empleado sin encargado y con nivel de acceso 1
-('María', 'López', 'ejemplo2@gmail.com', 'password', NULL, 2),  -- Ejemplo de un empleado con encargado y con nivel de acceso 2
-('Pedro', 'Gómez', 'ejemplo3@gmail.com', 'password', NULL, 3), -- Ejemplo de un empleado sin encargado y con nivel de acceso 3
-('Noel', 'Guevara', 'ejemplo4@gmail.com', 'password', 1,  5); -- Ejemplo de un empleado sin encargado y con nivel de acceso 5
+('Juan', 'Perez', 'ejemplo1@gmail.com', 'password21', NULL, 1), -- Ejemplo de un empleado sin encargado y con nivel de acceso 1
+('María', 'López', 'ejemplo2@gmail.com', 'password2', NULL, 2),  -- Ejemplo de un empleado con encargado y con nivel de acceso 2
+('Pedro', 'Gómez', 'ejemplo3@gmail.com', 'password3', NULL, 3), -- Ejemplo de un empleado sin encargado y con nivel de acceso 3
+('Noel', 'Guevara', 'ejemplo4@gmail.com', 'password4', 1,  5); -- Ejemplo de un empleado sin encargado y con nivel de acceso 5
 
 INSERT INTO Departamentos (nombreDepartamento, FK_idEmpleado)
 VALUES

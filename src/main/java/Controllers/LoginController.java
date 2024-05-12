@@ -15,7 +15,7 @@ import Models.Queries.ConsultasEmpleados.*;
 import static Models.Validations.EmpleadoValidator.*;
 
 
-@WebServlet(name = "LoginController", value = "/LoginController")
+@WebServlet(name = "LoginController", urlPatterns = {"/LoginController"})
 
 public class LoginController extends HttpServlet {
     public void init() {
@@ -50,17 +50,19 @@ public class LoginController extends HttpServlet {
                 if (consulta.existeEmpleado(empleadoActual)) {
                     // Obtener el empleado desde la base de datos
                     empleadoActual = consulta.ObtenerEmpleadoPorCorreoYPassword(email,password);
-                    System.out.println("empleadoActual.getFK_idNivelDeAcceso() = " + empleadoActual.getApellidos());
+                    System.out.println("empleadoActual.getFK_idNivelDeAcceso() = " + empleadoActual.getFK_idNivelDeAcceso());
 
                     // Establecer la sesión con el empleado autenticado
                     HttpSession sesion = request.getSession();
                     sesion.setAttribute("datosEmpleado", empleadoActual);
 
                     // Redireccionar a la página de formulario
-                    RequestDispatcher rd = request.getRequestDispatcher("2-formularioCaso.jsp");
+                    RequestDispatcher rd = request.getRequestDispatcher("panelDeControl.jsp");
                     rd.forward(request, response);
                 } else {
                     // El empleado no existe en la base de datos
+                   // getServletContext().setAttribute("mensaje", "pito"); //Broma para mandar mensaje en ambito de aplicaccion
+
                     request.setAttribute("mensaje", "Credenciales incorrectas, por favor intente de nuevo");
                     RequestDispatcher rd = request.getRequestDispatcher("login.jsp");
                     rd.forward(request, response);
@@ -76,6 +78,8 @@ public class LoginController extends HttpServlet {
             throw new ServletException("Error al procesar la solicitud: " + e.getMessage(), e);
         }
     }
+
+
 
     public void destroy() {
 
