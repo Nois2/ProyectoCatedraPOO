@@ -1,3 +1,8 @@
+<%
+    if(request.getSession().getAttribute("datosEmpleado") != null){
+        request.getRequestDispatcher("panelDeControl.jsp").forward(request, response);
+    }
+%>
 <%@ page import="Models.Tables.Empleados" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 
@@ -41,6 +46,7 @@
             </div>
         </div>
     </form>
+${applicationScope.get("tablaEstadoBitacora")}
 
 
 </body>

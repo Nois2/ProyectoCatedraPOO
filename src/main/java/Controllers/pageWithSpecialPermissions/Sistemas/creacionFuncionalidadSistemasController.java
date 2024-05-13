@@ -1,10 +1,14 @@
 package Controllers.pageWithSpecialPermissions.Sistemas;
 
+import Models.Tables.Empleados;
 import jakarta.servlet.*;
 import jakarta.servlet.http.*;
 import jakarta.servlet.annotation.*;
 
 import java.io.IOException;
+import java.io.InputStream;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 
 @WebServlet(name = "creacionFuncionalidadSistemasController", value = "/creacionFuncionalidadSistemasController")
 
@@ -15,12 +19,48 @@ public class creacionFuncionalidadSistemasController extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        HttpSession session = request.getSession();
+
+        // Declaración del objeto Empleados
+        Empleados emp;
+
+        // Constante que representa el rol de administrador
+        int rolAdministrador = 1; // Esto lo sé gracias a la data de la base de datos
+
+        // Verificar si hay datos de empleado en la sesión
+        if (session.getAttribute("datosEmpleado") != null) {
+            emp = (Empleados) session.getAttribute("datosEmpleado"); // Corrijo el nombre del atributo de sesión
+            System.out.println("emp.getFK_idNivelDeAcceso() = " + emp.getFK_idNivelDeAcceso());
+            if (emp.getFK_idNivelDeAcceso() == rolAdministrador) {
+                RequestDispatcher rd = request.getRequestDispatcher("WEB-INF/pageWithSpecialPermissions/Sistemas/Funcionalidades/creacionDeFuncionalidad.jsp");
+                rd.forward(request, response);
+            }
+            else {
+                RequestDispatcher rd = request.getRequestDispatcher("panelDeControl.jsp");
+                rd.forward(request, response);
+                System.out.println("Hubo un error a la hora de redirigir por culpa que no eres administrador");
+            }
+        }else{
+            request.setAttribute("request","No se supone que deberias de estar viendo esto");
+            RequestDispatcher rd = request.getRequestDispatcher("WEB-INF/PageErrors/errorPage.jsp");
+            rd.forward(request, response);
+
+        }
 
     }
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        // Obtiene el archivo enviado
+        Part filePart = request.getPart("pdfFile");
+        String fileName = Paths.get(filePart.getSubmittedFileName()).getFileName().toString();
 
+        // Guarda el archivo en el servidor
+        InputStream fileContent = filePart.getInputStream();
+        Files.copy(fileContent, Paths.get("ruta/donde/guardar/" + fileName)); // Cambia la ruta
+
+        // Puedes redirigir o responder con algún mensaje
+        response.sendRedirect("uploadSuccess.jsp");
     }
 
     public void destroy() {

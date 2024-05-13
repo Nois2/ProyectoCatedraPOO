@@ -24,7 +24,7 @@
                     <p class="text-center">Por favor, inténtalo de nuevo más tarde.</p>
                     <p>${mensaje}</p>
                     <div class="text-center mt-4">
-                        <a href="../../2-formularioCaso.jsp" class="btn btn-primary">Volver a la página principal</a>
+                        <a href="../../panelDeControl.jsp" class="btn btn-primary">Volver a la página principal</a>
                     </div>
                 </div>
             </div>

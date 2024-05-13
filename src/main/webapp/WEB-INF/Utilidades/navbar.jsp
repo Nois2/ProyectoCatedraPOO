@@ -10,14 +10,18 @@
 --%>
 <%
     Empleados datos = (Empleados) session.getAttribute("datosEmpleado");
-    if (datos != null) {}else {response.sendRedirect("login.jsp");}
+    String mensajeBienvenida = "";
+    if (datos != null) { mensajeBienvenida = datos.getNombres() + " " + datos.getApellidos();}else {response.sendRedirect("login.jsp");}
+    // Obteniendo la dirección IP del cliente
+    String ipAddress = request.getRemoteAddr();
+
 %>
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <div class="container-fluid">  <a class="navbar-brand" href="#">Navbar</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
-
+<%=ipAddress%>
         <div class="collapse navbar-collapse justify-content-between" id="navbarColor01">
             <ul class="navbar-nav">  <li class="nav-item active">
                 <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
@@ -29,7 +33,7 @@
                     <a class="nav-link" href="#">About</a>
                 </li>
             </ul>
-            <span class="nav-link">  Bienvenido: <%= datos.getNombres() + " " + datos.getApellidos() %>
+            <span class="nav-link">  Bienvenido: <%= mensajeBienvenida %>
       </span>
             <form class="form-inline" method="post" action="/LogoutController">
                 <input class="form-control mr-sm-2" name="CerrarSesion" value="true" type="hidden">
