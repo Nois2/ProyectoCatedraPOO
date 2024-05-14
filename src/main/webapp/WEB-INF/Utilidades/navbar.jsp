@@ -27,13 +27,13 @@
 <%=ipAddress%>
         <div class="collapse navbar-collapse justify-content-between" id="navbarColor01">
             <ul class="navbar-nav">  <li class="nav-item active">
-                <a class="nav-link" href="#">Ver tabla de empleados<span class="sr-only"></span></a>
+                <a class="nav-link" href="/TablaEmpleadosController">Ver tabla de empleados<span class="sr-only"></span></a>
             </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Ver tabla de proyectos</a>
+                    <a class="nav-link" href="/TablaProyectosController">Ver tabla de proyectos</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Crear Usuarios</a>
+                    <a class="nav-link" href="/RegistrarController">Crear Usuarios</a>
                 </li>
             </ul>
             <span class="nav-link">  Bienvenido: <%= mensajeBienvenida %>

@@ -28,11 +28,11 @@
     <h1 class="mb-4">Crear Nuevo Proyecto</h1>
     <form>
         <div class="mb-3">
-            <label for="idEmpleado" class="form-label">ID del Empleado</label>
+            <label for="idEmpleado" class="form-label">ID del Empleado Encargado de la Creacion del sistema</label>
             <input type="number" class="form-control" id="idEmpleado" name="sp_idEmpleado" required>
         </div>
         <div class="mb-3">
-            <label for="URL_requerimiento_documentoPDF" class="form-label">URL del Requerimiento (PDF)</label>
+            <label for="URL_requerimiento_documentoPDF" class="form-label">Adjuntar PDF:</label>
             <input type="file" class="form-control" id="URL_requerimiento_documentoPDF" name="sp_URL_requerimiento_documentoPDF" required>
         </div>
         <div class="mb-3">

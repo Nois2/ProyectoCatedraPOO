@@ -18,51 +18,6 @@
 
 <%@include file="WEB-INF/pageWithSpecialPermissions/Sistemas/panelSistemas.jsp"%>
 
-
-<%--Principio de fila uno--%>
-<div class="container">
-    <div class="row">
-        <div class="col-md-4">
-            <div class="card">
-
-            </div>
-        </div>
-        <!-- Repite este bloque para las otras dos tarjetas -->
-        <div class="col-md-4">
-            <div class="card">
-
-            </div>
-        </div>
-        <div class="col-md-4">
-            <div class="card">
-
-            </div>
-        </div>
-    </div>
-</div>
-<%--Fin de fila 1--%>
-
-<!-- Segunda fila de tarjetas -->
-<div class="container">
-    <div class="row">
-        <!-- Repite este bloque para las otras tres tarjetas -->
-        <div class="col-md-4">
-            <div class="card">
-
-            </div>
-        </div>
-        <div class="col-md-4">
-            <div class="card">
-
-            </div>
-        </div>
-        <div class="col-md-4">
-            <div class="card">
-
-            </div>
-        </div>
-    </div>
-</div>
 <%--Fin de la segunda fila--%>
 <%@include file="WEB-INF/Utilidades/footer.jsp"%>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
