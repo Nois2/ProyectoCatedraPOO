@@ -26,7 +26,7 @@
 <body>
 <div class="container">
     <h1 class="mb-4">Crear Nuevo Proyecto</h1>
-    <form>
+    <form method="post" action="/creacionProyectoController">
         <div class="mb-3">
             <label for="idEmpleado" class="form-label">ID del Empleado Encargado de la Creacion del sistema</label>
             <input type="number" class="form-control" id="idEmpleado" name="sp_idEmpleado" required>
@@ -46,7 +46,7 @@
         <button type="submit" class="btn btn-primary">Crear Proyecto</button>
     </form>
     <div class="mt-4" id="mensaje">
-        <!-- Aquí se mostrará el mensaje de salida -->
+        ${mensajes}
     </div>
     <a class="btn btn-primary" href="/panelDeControl.jsp">Ir a Inicio</a>
 </div>

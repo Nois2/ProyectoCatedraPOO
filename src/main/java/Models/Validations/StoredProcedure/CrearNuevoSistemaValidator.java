@@ -14,7 +14,7 @@ public class CrearNuevoSistemaValidator {
     public static boolean validarNombreProyecto(String nombreProyecto) {
         // Expresión regular que verifica si el nombre del proyecto contiene letras, números y espacios
         String regex = "^[a-zA-Z0-9\\s]+$";
-        return nombreProyecto != null && !nombreProyecto.isEmpty() && nombreProyecto.matches(regex);
+        return nombreProyecto != null && !nombreProyecto.isEmpty() && nombreProyecto.matches(regex) && nombreProyecto.length() >= 3;
     }
 
     // Validar la URL del documento PDF de requerimientos
