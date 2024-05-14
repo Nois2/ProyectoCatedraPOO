@@ -1,4 +1,4 @@
-package Models.Validations;
+package Models.Validations.Tables;
 
 import Models.Tables.Empleados;
 

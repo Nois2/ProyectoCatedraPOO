@@ -8,11 +8,9 @@ import jakarta.servlet.http.*;
 import jakarta.servlet.annotation.*;
 
 import java.io.IOException;
-import java.io.PrintWriter;
 import java.sql.SQLException;
 
-import Models.Queries.ConsultasEmpleados.*;
-import static Models.Validations.EmpleadoValidator.*;
+import static Models.Validations.Tables.EmpleadoValidator.*;
 
 
 @WebServlet(name = "LoginController", urlPatterns = {"/LoginController"})

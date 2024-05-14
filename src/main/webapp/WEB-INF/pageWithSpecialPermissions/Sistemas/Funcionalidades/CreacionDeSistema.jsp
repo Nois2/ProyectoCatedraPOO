@@ -29,7 +29,7 @@
     <form>
         <div class="mb-3">
             <label for="nombreProyecto" class="form-label">Nombre del Proyecto</label>
-            <input type="text" class="form-control" id="nombreProyecto" required>
+            <input type="text" class="form-control" id="nombreProyecto" name="sp_nombreProyecto" required>
         </div>
         <div class="mb-3">
             <label for="URL_requerimiento_documentoPDF" class="form-label">URL del Requerimiento (PDF)</label>
