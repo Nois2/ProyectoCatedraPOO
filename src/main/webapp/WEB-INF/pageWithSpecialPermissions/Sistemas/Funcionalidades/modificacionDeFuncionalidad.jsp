@@ -37,7 +37,7 @@
         </div>
         <div class="mb-3">
             <label for="porcentajeAvance" class="form-label">Porcentaje de Avance</label>
-            <input type="number" class="form-control" name="sp_porcentajeAvance" id="porcentajeAvance" required>
+            <input type="number" class="form-control" name="sp_porcentajeAvance" id="porcentajeAvance" max="100" required>
         </div>
         <div class="mb-3">
             <label for="fechaActualizacion" class="form-label">Fecha de Actualización</label>
@@ -49,9 +49,10 @@
         </div>
         <button type="submit" class="btn btn-primary">Actualizar Bitácora</button>
     </form>
-    <div class="mt-4" id="mensaje">
+    <div class="mt-4" id="mensaje" name="mensaje">
         <!-- Aquí se mostrará el mensaje de salida -->
     </div>
+    <a class="btn btn-primary" href="/panelDeControl.jsp">Ir a Inicio</a>
 </div>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </body>

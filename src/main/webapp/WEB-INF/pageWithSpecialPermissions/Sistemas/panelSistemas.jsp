@@ -8,15 +8,19 @@
     Empleados emp = (Empleados) rol.getAttribute("datosEmpleado");
 %>
 
+
+
 <html>
 <head>
     <title>Title</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous"></head>
+<link rel="stylesheet" href="css/panel.css">
 <body>
 <c:if test="<%= (emp != null && emp.getFK_idNivelDeAcceso() == rolParaVerPanelSistemas) %>">
-    <div class="container"> <!-- Agregado: Envoltorio principal -->
-        <h1>Panel de Sistemas</h1> <!-- Agregado: Título -->
-        <div class="row mb-4 pb-4"> <!-- Agregado: Clases de margen y relleno inferior -->
+    <div class="contenedorPadre">
+        <div class="container"> <!-- Agregado: Envoltorio principal -->
+            <h1>Panel de Sistemas</h1> <!-- Agregado: Título -->
+            <div class="row mb-4 pb-4"> <!-- Agregado: Clases de margen y relleno inferior -->
                 <div class="col-md-3"> <!-- Modificado: Cambio de col-md-4 a col-md-3 -->
                     <div class="card">
                         <img class="card-img-top" src="../../../image/panelDeControl/creacionProyecto.jpeg" alt="Card image cap">
@@ -33,7 +37,7 @@
                         <img class="card-img-top" src="../../../image/panelDeControl/creacionFuncionalidad.jpeg" alt="Card image cap">
                         <div class="card-body">
                             <h5 class="card-title">Creacion de Funcionalidad</h5>
-                            <p class="card-text">Crea una funcionalidad para un proyecto existente!</p>
+                            <p class="card-text">Crea una funcionalidad para un proyecto existente que permita autenticación de usuarios</p>
                             <a href="/creacionFuncionalidadSistemasController" class="btn btn-primary">Crear Funcionalidad</a>
                         </div>
                     </div>
@@ -42,14 +46,18 @@
                     <div class="card">
                         <img class="card-img-top" src="../../../image/panelDeControl/modificacionFuncionalidadExistente.jpeg" alt="Card image cap">
                         <div class="card-body">
-                            <h5 class="card-title">Modificar Funcionalidad Existente</h5>
+                            <h5 class="card-title">Modificar Funcionalidad</h5>
                             <p class="card-text">Haz ajustes o mejoras en las funcionalidades de proyectos ya creados.</p>
                             <a href="/modificacionSistemasController" class="btn btn-primary">Modificar</a>
 
                         </div>
+                    </div>
                 </div>
+            </div>
         </div>
     </div>
 </c:if>
 </body>
 </html>
+
+

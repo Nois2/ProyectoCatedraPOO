@@ -29,31 +29,31 @@
     <form id="addForm">
         <div class="mb-3">
             <label for="idCasoRequerimiento" class="form-label">ID del Caso de Requerimiento</label>
-            <input type="number" class="form-control" id="idCasoRequerimiento" required>
+            <input type="number" class="form-control" id="idCasoRequerimiento" name="sp_idCasoRequerimiento" required>
         </div>
         <div class="mb-3">
             <label for="descripcionAvance" class="form-label">Descripción de Avance</label>
-            <input type="text" class="form-control" id="descripcionAvance" required>
+            <input type="text" class="form-control" id="descripcionAvance" name="sp_descripcionAvance" required>
         </div>
         <div class="mb-3">
             <label for="porcentajeAvance" class="form-label">Porcentaje de Avance</label>
-            <input type="number" class="form-control" id="porcentajeAvance" required>
+            <input type="number" class="form-control" id="porcentajeAvance" name="sp_porcentajeAvance" max="100" required>
         </div>
         <div class="mb-3">
             <label for="fechaActualizacion" class="form-label">Fecha de Actualización</label>
-            <input type="date" class="form-control" id="fechaActualizacion" required>
+            <input type="date" class="form-control" id="fechaActualizacion" name="sp_fechaActualizacion" required>
         </div>
         <div class="mb-3">
             <label for="idEstadoBitacora" class="form-label">ID de Estado de Bitácora</label>
-            <input type="number" class="form-control" id="idEstadoBitacora" required>
+            <input type="number" class="form-control" id="idEstadoBitacora" name="sp_idEstadoBitacora" required>
         </div>
         <button type="submit" class="btn btn-primary">Agregar Bitácora</button>
     </form>
-    <div class="mt-4" id="mensaje">
+    <div class="mt-4" id="mensaje" name="mensaje">
         <!-- Aquí se mostrará el mensaje de salida -->
     </div>
+    <a class="btn btn-primary" href="/panelDeControl.jsp">Ir a Inicio</a>
 </div>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-
 </body>
 </html>

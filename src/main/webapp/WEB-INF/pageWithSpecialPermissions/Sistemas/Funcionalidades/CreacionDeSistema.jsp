@@ -28,26 +28,27 @@
     <h1 class="mb-4">Crear Nuevo Proyecto</h1>
     <form>
         <div class="mb-3">
-            <label for="nombreProyecto" class="form-label">Nombre del Proyecto</label>
-            <input type="text" class="form-control" id="nombreProyecto" name="sp_nombreProyecto" required>
+            <label for="idEmpleado" class="form-label">ID del Empleado</label>
+            <input type="number" class="form-control" id="idEmpleado" name="sp_idEmpleado" required>
         </div>
         <div class="mb-3">
             <label for="URL_requerimiento_documentoPDF" class="form-label">URL del Requerimiento (PDF)</label>
-            <input type="text" class="form-control" id="URL_requerimiento_documentoPDF" required>
+            <input type="file" class="form-control" id="URL_requerimiento_documentoPDF" name="sp_URL_requerimiento_documentoPDF" required>
         </div>
         <div class="mb-3">
             <label for="descripcionProyecto" class="form-label">Descripción del Proyecto</label>
-            <textarea class="form-control" id="descripcionProyecto" rows="3" required></textarea>
+            <textarea class="form-control" id="descripcionProyecto" rows="3" name="descripcionProyecto" required></textarea>
         </div>
         <div class="mb-3">
-            <label for="idEmpleado" class="form-label">ID del Empleado</label>
-            <input type="number" class="form-control" id="idEmpleado" required>
+            <label for="nombreProyecto" class="form-label">Nombre del Proyecto</label>
+            <input type="text" class="form-control" id="nombreProyecto" name="sp_nombreProyecto" required>
         </div>
         <button type="submit" class="btn btn-primary">Crear Proyecto</button>
     </form>
     <div class="mt-4" id="mensaje">
         <!-- Aquí se mostrará el mensaje de salida -->
     </div>
+    <a class="btn btn-primary" href="/panelDeControl.jsp">Ir a Inicio</a>
 </div>
 
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">

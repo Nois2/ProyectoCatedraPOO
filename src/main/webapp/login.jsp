@@ -25,10 +25,14 @@
                     <img src="image/images.png" alt="" width="100px" height="100px">
                     <br>
                     <br>
-                    <label for="usuarioPrincipal">Nombre: </label><input type="email" name="email" id="usuarioPrincipal" placeholder="Usuario"> <!--Aqui es el inicio de sesion del usuario-->
+                    <label for="usuarioPrincipal">Nombre: </label>
+                <br>
+                <input type="email" name="email" id="usuarioPrincipal" placeholder="Usuario"> <!--Aqui es el inicio de sesion del usuario-->
                     <br>
                     <br>
-                    <label for="contraseñaPrincipal">Contraseña: </label><input type="text" name="password" id="contraseñaPrincipal" placeholder="Contraseña">
+                    <label for="contraseñaPrincipal">Contraseña: </label>
+                <br>
+                <input type="password" name="password" id="contraseñaPrincipal" placeholder="Contraseña">
                     <br>
                     <br>
                 <button type="submit" class="btn btn-primary btn-block">Iniciar Sesión</button>
