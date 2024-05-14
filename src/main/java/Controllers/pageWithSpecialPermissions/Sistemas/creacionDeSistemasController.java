@@ -9,7 +9,7 @@ import java.io.IOException;
 
 @WebServlet(name = "creacionProyectoController", value = "/creacionProyectoController")
 
-public class creacionProyectoController extends HttpServlet {
+public class creacionDeSistemasController extends HttpServlet {
     public void init() {
 
     }

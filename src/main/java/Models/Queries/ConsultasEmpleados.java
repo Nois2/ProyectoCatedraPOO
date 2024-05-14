@@ -107,4 +107,18 @@ public class ConsultasEmpleados {
             }
         }
     }
+
+
+    public boolean InsertarEmpleado(Empleados e) throws SQLException {
+        String sql = "INSERT INTO Empleados (nombres, apellidos, mail, passwd, FK_empleadoEncargado, FK_idNivelDeAcceso) VALUES ("
+                + "'" + e.getNombres() + "', "
+                + "'" + e.getApellidos() + "', "
+                + "'" + e.getMail() + "', "
+                + "'" + e.getPasswd() + "', "
+                + (e.getFK_empleadoEncargado() == 0 ? "NULL" : e.getFK_empleadoEncargado()) + ", "
+                + e.getFK_idNivelDeAcceso() + ");";
+
+        int filasAfectadas= cn.ejecutarEliminacionActualizacionInsercion(sql);
+        return filasAfectadas > 0;
+    }
 }
