@@ -46,7 +46,7 @@
         <button type="submit" class="btn btn-primary">Crear Proyecto</button>
     </form>
     <div class="mt-4" id="mensaje">
-        ${mensajes}
+        ${mensaje}
     </div>
     <a class="btn btn-primary" href="/panelDeControl.jsp">Ir a Inicio</a>
 </div>

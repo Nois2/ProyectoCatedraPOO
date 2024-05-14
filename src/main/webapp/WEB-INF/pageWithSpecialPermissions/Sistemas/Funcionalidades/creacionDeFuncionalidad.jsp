@@ -50,7 +50,7 @@
         <button type="submit" class="btn btn-primary">Agregar Bitácora</button>
     </form>
     <div class="mt-4" id="mensaje" name="mensaje">
-        <!-- Aquí se mostrará el mensaje de salida -->
+        ${mensaje}
     </div>
     <a class="btn btn-primary" href="/panelDeControl.jsp">Ir a Inicio</a>
 </div>

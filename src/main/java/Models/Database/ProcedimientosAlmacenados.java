@@ -35,6 +35,7 @@ public class ProcedimientosAlmacenados {
             ResultSet mensajeResultSet = cn.EjecutarConsultas("SELECT @mensaje as mensaje");
             if (mensajeResultSet.next()) {
                 resultado = mensajeResultSet.getString("mensaje");
+                System.out.println(" = " + resultado);
             }
             mensajeResultSet.close();
         } catch (SQLException e) {
