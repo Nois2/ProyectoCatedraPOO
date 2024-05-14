@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 <%--Gracias a esta barra de navegacion a cualquier pagina de la cual no este logueado no la puedo ver--%>
 <%@ page import="Models.Tables.Empleados" %>
@@ -26,15 +27,18 @@
         </button>
 <%=ipAddress%>
         <div class="collapse navbar-collapse justify-content-between" id="navbarColor01">
-            <ul class="navbar-nav">  <li class="nav-item active">
-                <a class="nav-link" href="/TablaEmpleadosController">Ver tabla de empleados<span class="sr-only"></span></a>
-            </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="/TablaProyectosController">Ver tabla de proyectos</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="/RegistrarController">Crear Usuarios</a>
-                </li>
+            <ul class="navbar-nav">
+                <c:if test="<%=datos.getFK_idNivelDeAcceso() == 1%>">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="/TablaEmpleadosController">Ver tabla de empleados<span class="sr-only"></span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/TablaProyectosController">Ver tabla de proyectos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/RegistrarController">Crear Usuarios</a>
+                    </li>
+                </c:if>
             </ul>
             <span class="nav-link">  Bienvenido: <%= mensajeBienvenida %>
       </span>

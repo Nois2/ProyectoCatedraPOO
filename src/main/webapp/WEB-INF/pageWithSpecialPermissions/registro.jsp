@@ -28,10 +28,7 @@
                   <label for="passwd" class="form-label">Password</label>
                   <input type="password" class="form-control" id="passwd" name="passwd" required>
               </div>
-              <div class="mb-3">
-                  <label for="idNivelDeAcceso" class="form-label">ID del Nivel de Acceso</label>
-                  <input type="text" class="form-control" id="idNivelDeAcceso" name="idNivelDeAcceso" required>
-              </div>
+
               <button type="submit" class="btn btn-primary">Enviar</button>
               ${mensajeDeError}
           </form>
